@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="template," />
 
 
 
@@ -79,16 +79,17 @@
 
 
 
-<meta name="description" content="……">
+<meta name="description" content="循环队列，size记录队列长度offer, poll, peek先判断队列容量">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux基本操作">
-<meta property="og:url" content="http://yoursite.com/2019/12/21/linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:title" content="CircularQueue">
+<meta property="og:url" content="http://yoursite.com/2019/12/26/CircularQueue/index.html">
 <meta property="og:site_name" content="我妹没有扯淡">
-<meta property="og:description" content="……">
+<meta property="og:description" content="循环队列，size记录队列长度offer, poll, peek先判断队列容量">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-12-21T09:45:41.000Z">
-<meta property="article:modified_time" content="2019-12-24T14:17:58.528Z">
+<meta property="article:published_time" content="2019-12-26T13:13:04.000Z">
+<meta property="article:modified_time" content="2019-12-26T13:15:23.863Z">
 <meta property="article:author" content="xihongshi">
+<meta property="article:tag" content="template">
 <meta name="twitter:card" content="summary">
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/12/21/linux基本操作/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/12/26/CircularQueue/"/>
 
 
 
 
 
-  <title>linux基本操作 | 我妹没有扯淡</title>
+  <title>CircularQueue | 我妹没有扯淡</title>
   
 
 
@@ -232,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/21/linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/26/CircularQueue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xihongshi">
@@ -249,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux基本操作</h1>
+          <h1 class="post-title" itemprop="name headline">CircularQueue</h1>
         
 
         <div class="post-meta">
@@ -261,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-21T17:45:41+08:00">
-                2019-12-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-26T21:13:04+08:00">
+                2019-12-26
               </time>
             
 
@@ -299,13 +300,10 @@
       
 
       
-        <p>……</p>
+        <p>循环队列，size记录队列长度<br>offer, poll, peek先判断队列容量</p>
 <a id="more"></a>
 
-<h4 id="修改home目录下的文件名"><a href="#修改home目录下的文件名" class="headerlink" title="修改home目录下的文件名"></a>修改home目录下的文件名</h4><p>~.config/user.dirs.dirs</p>
-<h4 id="tools"><a href="#tools" class="headerlink" title="tools"></a>tools</h4><p>atom git axel chrome, chromium,</p>
-<h4 id="更换阿里源"><a href="#更换阿里源" class="headerlink" title="更换阿里源"></a>更换阿里源</h4><p>/etc/apt/source.list</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">deb cdrom:[Ubuntu 16.04.3 LTS _Xenial Xerus_ - Release amd64 (20170801)]&#x2F; xenial main restricted</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; xenial main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; xenial-security main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; xenial-updates main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; xenial-proposed main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; xenial-backports main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; xenial main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; xenial-security main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; xenial-updates main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; xenial-proposed main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; xenial-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CircularQueue</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> T[] arr;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> capacity;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> head;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> tail;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CircularQueue</span><span class="params">(<span class="keyword">int</span> capacity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.capacity = capacity;</span><br><span class="line">        <span class="keyword">this</span>.arr = (T[]) <span class="keyword">new</span> Object[capacity];</span><br><span class="line">        <span class="keyword">this</span>.size = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">this</span>.head = tail = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">offer</span><span class="params">(T val)</span> <span class="keyword">throws</span> NullPointerException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (size + <span class="number">1</span> &gt; capacity) <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"full queue"</span>);</span><br><span class="line">        size++;</span><br><span class="line">        arr[tail] = val;</span><br><span class="line">        tail = (tail + <span class="number">1</span>) % capacity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">poll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (size == <span class="number">0</span>) <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"empty queue"</span>);</span><br><span class="line">        T res = (T) arr[head];</span><br><span class="line">        head = (head + <span class="number">1</span>) % capacity;</span><br><span class="line">        size--;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">peek</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (size &lt;= <span class="number">0</span>) <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException();</span><br><span class="line">        <span class="keyword">return</span> (T) arr[head];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> size == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -321,6 +319,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/template/" rel="tag"># template</a>
+          
+        </div>
+      
 
       
       
@@ -330,8 +334,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/19/HeapSort/" rel="next" title="HeapSort">
-                <i class="fa fa-chevron-left"></i> HeapSort
+              <a href="/2019/12/26/LinkedQueue/" rel="next" title="LinkedQueue">
+                <i class="fa fa-chevron-left"></i> LinkedQueue
               </a>
             
           </div>
@@ -339,10 +343,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/26/LinkedQueue/" rel="prev" title="LinkedQueue">
-                LinkedQueue <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -394,17 +394,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -459,22 +450,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改home目录下的文件名"><span class="nav-number">1.</span> <span class="nav-text">修改home目录下的文件名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tools"><span class="nav-number">2.</span> <span class="nav-text">tools</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更换阿里源"><span class="nav-number">3.</span> <span class="nav-text">更换阿里源</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
